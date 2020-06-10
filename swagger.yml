@@ -1,0 +1,74 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger ReST Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /farmacias:
+    get:
+      operationId: farmacias.read_all
+      tags:
+        - Farmacias
+      description: Leer la lista de farmacias en turno
+      responses:
+        200:
+          description: Se ha leido correctamente la lista de farmacias
+          schema:
+            type: array
+            items:
+              properties:
+                local_nombre:
+                  type: string
+                local_direccion:
+                  type: string
+                local_telefono:
+                  type: string
+                local_lat:
+                  type: string
+                local_lng:
+                  type: string
+    post:
+      operationId: farmacias.filterer
+      tags:
+        - Farmacias
+      description: Filtrar la lista de farmacias por lugar y/o nombre
+      parameters:
+        - name: nombre_numero
+          in: body
+          description: nombre de la farmacia y numero de la comuna
+          required: True
+          schema:
+            type: object
+            properties:
+              fname:
+                type: string
+                description: First name of person to create
+              lname:
+                type: string
+                description: Last name of person to create
+      responses:
+        201:
+          description: Se filtró correctamente la lista
+  /comunas:
+    get:
+      operationId: comunas.read
+      tags:
+        - Comunas
+      responses:
+        200:
+          description: Se leyó correctamente la lista de comunas
+          schema:
+            type: string
+            items:
+              properties:
+                fname:
+                  type: string
+          
