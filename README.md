@@ -1,4 +1,4 @@
-<a href="http://fvcproductions.com"><img src="https://raw.githubusercontent.com/Francisco-Huerta/Consorcio/master/image.png?token=AHETA76MMNDFYYTYLNRUMNC64DGE4" title="FVCproductions" alt="FVCproductions"></a>
+<a><img src="https://raw.githubusercontent.com/Francisco-Huerta/Consorcio/master/image.png?token=AHETA76MMNDFYYTYLNRUMNC64DGE4"></a>
 # Consorcio
 Este proyecto fue desarrollado usando Python 3.8.3, flask 1.1.2, connexion 2.7.0, fue utilizada la especificacion Swagger para validar la entrada y salida de información desde y hacia la API.
 
