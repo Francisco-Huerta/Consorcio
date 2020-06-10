@@ -23,12 +23,16 @@ class FlaskTest(unittest.TestCase):
         response = tester.post("/api/farmacias", json={'numeroComuna': '121', 'nombreFarmacia': 'H'})
         self.assertEqual(response.content_type, "application/json")
 
-    # check for Data returned
+    # Validamos que esté toda la información mínima requerida por las especificaciones
     def test_index_data(self):
         tester = app.app.test_client(self)
         response = tester.post("/api/farmacias", json={'numeroComuna': '121', 'nombreFarmacia': 'H'})
         self.assertTrue(b'comuna_nombre' in response.data)
         self.assertTrue(b'local_nombre' in response.data)
+        self.assertTrue(b'local_direccion' in response.data)
+        self.assertTrue(b'local_telefono' in response.data)
+        self.assertTrue(b'local_lat' in response.data)
+        self.assertTrue(b'local_lng' in response.data)
 
     # check for out of bounds location number
     def test_index_outofbounds(self):
